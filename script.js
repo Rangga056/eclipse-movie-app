@@ -4,6 +4,7 @@ const main = document.getElementById("content");
 const searchBtn = document.querySelector(".search-btn");
 const topRatedBtn = document.querySelector(".top_rated_button");
 const trendingBtn = document.querySelector(".trending_button");
+const errorMessage = document.querySelector(".error-message");
 
 //* API
 const apikey = "c65a2cdc245291ed6b0df91dafa436e1";
@@ -56,7 +57,7 @@ async function getMovieData(url) {
 
 searchBtn.addEventListener("click", () => {
   main.innerHTML = "";
-  const searchedItem = search.value;
+  let searchedItem = search.value;
 
 
   try {
@@ -64,11 +65,12 @@ searchBtn.addEventListener("click", () => {
     search.value = "";
   } catch (error) {
     console.log(error);
+    errorMessage.style.display = "flex";
   }
 });
 
 search.addEventListener("keypress", (e) => {
-  const searchedItem = search.value;
+  let searchedItem = search.value;
 
   if (e.key === "Enter") {
     e.preventDefault();
@@ -80,13 +82,14 @@ search.addEventListener("keypress", (e) => {
       search.value = "";
     } catch (error) {
       console.log(error);
+      errorMessage.style.display = "flex";
     }
   }
 });
 
 topRatedBtn.addEventListener("click", () => {
   main.innerHTML = "";
-  const searchedItem = search.value;
+  let searchedItem = search.value;
 
 
   try {
@@ -94,11 +97,12 @@ topRatedBtn.addEventListener("click", () => {
     searchedItem = "";
   } catch (error) {
     console.log(error);
+    errorMessage.style.display = "flex";
   }
 });
 
 trendingBtn.addEventListener("click", () => {
-  const searchedItem = search.value;
+  let searchedItem = search.value;
   main.innerHTML = "";
 
   try {
@@ -106,6 +110,7 @@ trendingBtn.addEventListener("click", () => {
     searchedItem = "";
   } catch (error) {
     console.log(error);
+    errorMessage.style.display = "flex";
   }
 });
 
