@@ -197,6 +197,18 @@ nav{
   margin-bottom: 10px;
 }
 
+.movie_details span{
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.green, .orange, .red{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 .green{
   color: var(--accent);
 }
@@ -223,11 +235,22 @@ nav{
 }
 
 .overview{
+  display: flex;
   font-size: 16px;
   opacity: .8;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-@media (max-width: 840px){
+
+.release_date{
+  margin-top: 10px;
+  text-align: right;
+  color: var(--accent);
+  opacity: .9;
+}
+
+@media (max-width: 1020px){
   .content{
     display: grid;
     grid-template-columns: repeat(2, 45%);
@@ -235,13 +258,6 @@ nav{
 
   .movie_title{
     margin-top: 20px;
-  }
-
-  .release_date{
-    margin-top: 10px;
-    text-align: right;
-    color: var(--accent);
-    opacity: .9;
   }
   
 }
